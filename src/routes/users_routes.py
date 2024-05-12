@@ -11,9 +11,9 @@ router = APIRouter(
 
 def give_user(users):
     return {
+        "id": str(users["_id"]),
         "name": users["name"],
         "email": users["email"],
-        "id": users["id"]
     }
 
 
