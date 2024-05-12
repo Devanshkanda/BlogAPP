@@ -16,11 +16,11 @@ except Exception as e:
 app = FastAPI()
 
 
-from routes import users_routes, blog_post_routes
+from routes import users_routes, blog_post_routes, likes_routes
 
 app.include_router(users_routes.router)
 app.include_router(blog_post_routes.router)
-
+app.include_router(likes_routes.router)
 
 
 @app.get("/")
