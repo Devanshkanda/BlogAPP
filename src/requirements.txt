@@ -1,0 +1,4 @@
+fastapi
+pymongo[srv]
+pydantic-settings
+uvicorn
