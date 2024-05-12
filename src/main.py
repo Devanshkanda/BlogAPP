@@ -5,7 +5,7 @@ try:
     from config import EnvConfigSettings
 
     env = EnvConfigSettings()
-    
+
     db = db_conn.get_db_connection(url=env.mongodb_uri, db_name=env.db_name)
 
 except Exception as e:
@@ -14,6 +14,11 @@ except Exception as e:
 
 
 app = FastAPI()
+
+
+from routes import users_routes
+app.include_router(users_routes.router)
+
 
 @app.get("/")
 async def welcome():
